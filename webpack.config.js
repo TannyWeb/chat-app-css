@@ -24,6 +24,7 @@ module.exports = {
 
   module: {
     rules: [
+
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -41,6 +42,22 @@ module.exports = {
           { loader: 'sass-loader', options: { implementation: require('sass'), sourceMap: true } },
         ]
       },
+
+      // {
+      //   test: /\.(jpg|jpeg|png|gif)$/,
+      //   loader: "url-loader",
+      // },
+
+      {
+				test: /\.(svg|png|jpg|jpeg|gif)$/,
+				use: {
+					loader: 'file-loader',
+					options: {
+						name: '[name].[hash].[ext]',
+						outputPath: 'imgs'
+					}
+				}
+			},
     ],
   },
 
