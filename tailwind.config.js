@@ -23,6 +23,10 @@ module.exports = {
         'violet': '#8838ff',
         'magenta': '#e942ff',
         'darkViolet': '#3e2753'
+      },
+
+      fontFamily: {
+        display: ['Rubik', 'sans-serif']
       }
     }
   },
