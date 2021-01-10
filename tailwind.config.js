@@ -21,7 +21,8 @@ module.exports = {
 
       colors: {
         'violet': '#8838ff',
-        'magenta': '#e942ff'
+        'magenta': '#e942ff',
+        'darkViolet': '#3e2753'
       }
     }
   },
