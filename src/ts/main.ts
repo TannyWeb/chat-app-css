@@ -14,7 +14,7 @@ mins < 10 ? `0${mins}` : `${mins}`;
 
 const formattedDate = `${hour}:${mins}`;
 
-const div = document.querySelector('.grid');
+const div = document.querySelector('#screen');
 const ft = new MessageTemplate(div)
 
 

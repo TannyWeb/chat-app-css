@@ -18,5 +18,8 @@ export class SendMessage implements HasFormatter {
     date() {
         return this.dateNow
     }
+    pos() {
+        return 'self-start'
+    }
 
 }
