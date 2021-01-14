@@ -27,6 +27,9 @@ module.exports = {
 
       fontFamily: {
         display: ['Rubik', 'sans-serif']
+      },
+      height: {
+        fixed: '500px'
       }
     }
   },
