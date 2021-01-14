@@ -1,21 +1,25 @@
 import { HasFormatter } from '../interfaces/hasFormatter';
 
 export class MessageTemplate {
-    constructor(private container: HTMLDivElement) {
+    constructor(private container: Element) {
 
     }
 
     render(item: HasFormatter) {
+        const div = document.createElement('div')
         const h4 = document.createElement('h4');
         h4.innerText = item.name();
-        this.container.append(h4)
+        div.append(h4)
 
         const p = document.createElement('p');
         p.innerText = item.message();
-        this.container.append(p)
+        div.append(p)
 
         const d = document.createElement('p');
         d.innerText = item.date()
-        this.container.append(d)
+        div.append(d)
+
+
+        this.container.append(div)
     }
 }

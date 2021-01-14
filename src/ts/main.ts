@@ -10,11 +10,11 @@ const input = document.querySelector('input');
 const btn = document.querySelector('#send');
 const hour = new Date().getHours();
 const mins = new Date().getMinutes();
-mins < 10 ? `0${mins}` : `${mins}`
+mins < 10 ? `0${mins}` : `${mins}`;
 
 const formattedDate = `${hour}:${mins}`;
 
-const div = document.querySelector('h2');
+const div = document.querySelector('.grid');
 const ft = new MessageTemplate(div)
 
 
