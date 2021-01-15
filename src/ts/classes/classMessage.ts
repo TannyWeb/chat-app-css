@@ -1,6 +1,6 @@
 import { HasFormatter } from '../interfaces/hasFormatter';
 
-export class SendMessage implements HasFormatter {
+export class Message implements HasFormatter {
     constructor(
         readonly myName: string,
         readonly myMessage: string,

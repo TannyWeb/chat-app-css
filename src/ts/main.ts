@@ -2,9 +2,10 @@ import '../sass/styles.sass';
 
 console.log('is typescript working')
 
-import { SendMessage } from './classes/sendMessage';
+import { Message } from './classes/classMessage';
 import { HasFormatter } from './interfaces/hasFormatter';
 import { MessageTemplate } from './classes/messageTemplate';
+import { getQuote } from './api/inspoQuote'
 
 const input = document.querySelector('input');
 const btn = document.querySelector('#send');
@@ -26,7 +27,7 @@ btn.addEventListener('click', (e: Event) => {
 
     if (input.value !== "") {
         console.log('show something')
-        doc = new SendMessage('Tanny', input.value, formattedDate, 'sent')
+        doc = new Message('Tanny', input.value, formattedDate, 'sent')
         console.log(doc)
 
         ft.render(doc)
@@ -37,8 +38,9 @@ btn.addEventListener('click', (e: Event) => {
 recieveBtn.addEventListener('click', (e: Event) => {
     e.preventDefault();
     console.log('get ready to recieve a message');
-    doc = new SendMessage('abraham', input.value, formattedDate, 'recieved');
+    doc = new Message('abraham', input.value, formattedDate, 'recieved');
     ft.render(doc);
     input.value = "";
+    getQuote()
 
 })
