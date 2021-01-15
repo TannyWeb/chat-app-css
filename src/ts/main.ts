@@ -29,7 +29,7 @@ btn.addEventListener('click', (e: Event) => {
 
     if (input.value !== "") {
         console.log('show something')
-        doc = new SendMessage('Tanny', input.value, formattedDate, 'self-start')
+        doc = new SendMessage('Tanny', input.value, formattedDate, 'sent')
         console.log(doc)
 
         ft.render(doc)
