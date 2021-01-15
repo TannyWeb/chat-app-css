@@ -5,7 +5,6 @@ console.log('is typescript working')
 import { Message } from './classes/classMessage';
 import { HasFormatter } from './interfaces/hasFormatter';
 import { MessageTemplate } from './classes/messageTemplate';
-import { getQuote } from './api/inspoQuote'
 
 const input = document.querySelector('input');
 const btn = document.querySelector('#send');
@@ -38,9 +37,31 @@ btn.addEventListener('click', (e: Event) => {
 recieveBtn.addEventListener('click', (e: Event) => {
     e.preventDefault();
     console.log('get ready to recieve a message');
-    doc = new Message('abraham', input.value, formattedDate, 'recieved');
-    ft.render(doc);
-    input.value = "";
-    getQuote()
+    const url = 'https://type.fit/api/quotes';
+    const getQuote = async () => {
+
+        try {
+            const data = await (await fetch(url)).json();
+            const randomNum = Math.floor(Math.random() * data.length);
+            const randomQuote = data[randomNum];
+
+            let { text, author } = randomQuote;
+
+            if (author === null || author == '') {
+                author = 'Unknown'
+            } else {
+                author = author
+            }
+
+
+
+            doc = new Message(author, text, formattedDate, 'recieved');
+            ft.render(doc);
+
+        } catch (error) {
+            return error
+        }
+    }
+    getQuote();
 
 })
