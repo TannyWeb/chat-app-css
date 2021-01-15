@@ -4,9 +4,10 @@ export class SendMessage implements HasFormatter {
     constructor(
         readonly myName: string,
         readonly myMessage: string,
-        readonly dateNow: string
-    ) { }
-
+        readonly dateNow: string,
+        readonly typeOf: string
+    ) {
+    }
     name() {
         return this.myName
     }
@@ -18,8 +19,10 @@ export class SendMessage implements HasFormatter {
     date() {
         return this.dateNow
     }
-    pos() {
-        return 'self-start'
+
+    type() {
+        return this.typeOf
     }
+
 
 }

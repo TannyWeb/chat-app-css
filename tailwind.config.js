@@ -29,7 +29,7 @@ module.exports = {
         display: ['Rubik', 'sans-serif']
       },
       height: {
-        fixed: '520px'
+        fixed: '580px'
       }
     }
   },
