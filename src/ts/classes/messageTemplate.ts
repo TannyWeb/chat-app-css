@@ -28,7 +28,7 @@ export class MessageTemplate {
         infoWrapperBottom.append(name)
 
         message.innerText = item.message();
-        message.classList.add('rounded-xl', 'bg-red-500', 'text-white', 'p-2')
+        message.classList.add('rounded-xl', 'p-2')
         infoWrapper.append(message)
 
         date.innerText = item.date();
@@ -46,10 +46,13 @@ export class MessageTemplate {
 
         console.log(item.type())
         if (item.type() == 'sent') {
-            outerDiv.classList.add('bg-white', 'text-gray-600', 'shadow-lg', 'self-end');
+            outerDiv.classList.add('text-gray-600', 'self-end', 'flex-end', 'justify-end');
+            message.classList.add('big-white', 'text-gray-600', 'shadow-md');
+            circle.remove();
             // outerDiv.prepend(circle);
         } else if (item.type() == 'recieved') {
             outerDiv.classList.add('self-start');
+            message.classList.add('bg-red-500', 'text-white')
             // outerDiv.append(circle);
         }
 
