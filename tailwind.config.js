@@ -30,6 +30,9 @@ module.exports = {
       },
       height: {
         fixed: '580px'
+      },
+      fontSize: {
+        'textInfo' : '.625rem'
       }
     }
   },

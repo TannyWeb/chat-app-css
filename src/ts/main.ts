@@ -10,13 +10,14 @@ const input = document.querySelector('input');
 const btn = document.querySelector('#send');
 const recieveBtn = document.querySelector('#recieve');
 const hour = new Date().getHours();
-const mins = new Date().getMinutes();
-mins < 10 ? `0${mins}` : `${mins}`;
+let mins = new Date().getMinutes();
+let newMin = '';
+mins < 10 ? newMin = `0${mins}` : newMin = `${mins}`;
 
-const formattedDate = `${hour}:${mins}`;
+const formattedDate = `${hour}:${newMin}`;
 
 const div = document.querySelector('#screen');
-const ft = new MessageTemplate(div)
+const messageTemplate = new MessageTemplate(div)
 
 let doc: HasFormatter;
 
@@ -29,7 +30,7 @@ btn.addEventListener('click', (e: Event) => {
         doc = new Message('Tanny', input.value, formattedDate, 'sent')
         console.log(doc)
 
-        ft.render(doc)
+        messageTemplate.render(doc)
         input.value = "";
     }
 })
@@ -53,15 +54,13 @@ recieveBtn.addEventListener('click', (e: Event) => {
                 author = author
             }
 
-
-
             doc = new Message(author, text, formattedDate, 'recieved');
-            ft.render(doc);
+            messageTemplate.render(doc);
 
         } catch (error) {
             return error
         }
     }
     getQuote();
+});
 
-})
