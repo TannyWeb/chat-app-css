@@ -8,6 +8,7 @@ import { MessageTemplate } from './classes/messageTemplate';
 
 const input = document.querySelector('input');
 const btn = document.querySelector('#send');
+const recieveBtn = document.querySelector('#recieve');
 const hour = new Date().getHours();
 const mins = new Date().getMinutes();
 mins < 10 ? `0${mins}` : `${mins}`;
@@ -17,15 +18,11 @@ const formattedDate = `${hour}:${mins}`;
 const div = document.querySelector('#screen');
 const ft = new MessageTemplate(div)
 
+let doc: HasFormatter;
 
 btn.addEventListener('click', (e: Event) => {
     e.preventDefault();
 
-    console.log('it has been clicked')
-
-
-
-    let doc: HasFormatter;
 
     if (input.value !== "") {
         console.log('show something')
@@ -35,4 +32,13 @@ btn.addEventListener('click', (e: Event) => {
         ft.render(doc)
         input.value = "";
     }
+})
+
+recieveBtn.addEventListener('click', (e: Event) => {
+    e.preventDefault();
+    console.log('get ready to recieve a message');
+    doc = new SendMessage('abraham', input.value, formattedDate, 'recieved');
+    ft.render(doc);
+    input.value = "";
+
 })
