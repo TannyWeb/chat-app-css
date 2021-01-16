@@ -4,9 +4,10 @@ import { MessageTemplate } from '../classes/messageTemplate';
 import { formattedDate } from './formateDate'
 
 const url = 'https://type.fit/api/quotes';
-const input = document.querySelector('input');
 
+const input = document.querySelector('input');
 const div = document.querySelector('#child');
+
 const messageTemplate = new MessageTemplate(div);
 
 interface QuoteInfo {
