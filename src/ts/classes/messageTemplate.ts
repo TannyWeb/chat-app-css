@@ -1,4 +1,5 @@
 import { HasFormatter } from '../interfaces/hasFormatter';
+import { colors, shades } from '../functions/randomPickGenerator'
 
 export class MessageTemplate {
     constructor(private container: Element) { }
@@ -28,7 +29,7 @@ export class MessageTemplate {
         infoWrapperBottom.append(name)
 
         message.innerText = item.message();
-        message.classList.add('rounded-xl', 'p-2')
+        message.classList.add('message', 'rounded-xl', 'p-2')
         infoWrapper.append(message)
 
         date.innerText = item.date();
@@ -52,7 +53,17 @@ export class MessageTemplate {
             // outerDiv.prepend(circle);
         } else if (item.type() == 'recieved') {
             outerDiv.classList.add('self-start');
-            message.classList.add('bg-red-500', 'text-white')
+
+            const randomPick = (arr: string[]) => {
+                return Math.floor(Math.random() * arr.length)
+            }
+
+            const randomColor: string = colors[randomPick(colors)];
+            const randomShade: string = shades[randomPick(shades)]
+
+            console.log(`bg-${randomColor}-${randomShade}`)
+
+            message.classList.add(`bg-${randomColor}-${randomShade}`, 'text-white')
             // outerDiv.append(circle);
         }
 
