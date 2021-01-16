@@ -19,6 +19,8 @@ export class MessageTemplate {
         //Create cirl div holding image
         circle.classList.add('circle', 'border-solid', 'border-2', 'rounded-full', 'w-8', 'h-8', 'self-center', 'mr-3', 'mb-4');
 
+        circle.src = item.picture();
+
         //Create infoWrapper to hold all the information in
         infoWrapper.classList.add('w-5/6', 'flex', 'flex-col');
 

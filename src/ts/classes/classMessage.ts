@@ -5,6 +5,7 @@ export class Message implements HasFormatter {
         readonly myName: string,
         readonly myMessage: string,
         readonly dateNow: string,
+        readonly myPicture: string,
         readonly typeOf: string
     ) {
     }
@@ -18,6 +19,10 @@ export class Message implements HasFormatter {
 
     date() {
         return this.dateNow
+    }
+
+    picture() {
+        return this.myPicture
     }
 
     type() {
