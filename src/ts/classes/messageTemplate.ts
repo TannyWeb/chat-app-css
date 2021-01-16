@@ -16,7 +16,7 @@ export class MessageTemplate {
         outerDiv.classList.add('flex', 'w-5/6', 'mb-4', 'rounded-t-xl', 'rounded-br-xl', 'rounded-bl-md', 'text-xs', 'p-2');
 
         //Create cirl div holding image
-        circle.classList.add('circle', 'outline-black', 'rounded-full', 'w-1/6', 'h-10', 'self-center', 'mr-3', 'mb-4');
+        circle.classList.add('circle', 'outline-black', 'rounded-full', 'w-1/6', 'h-8', 'self-center', 'mr-3', 'mb-4');
 
         //Create infoWrapper to hold all the information in
         infoWrapper.classList.add('w-5/6', 'flex', 'flex-col');
@@ -47,7 +47,7 @@ export class MessageTemplate {
         console.log(item.type())
         if (item.type() == 'sent') {
             outerDiv.classList.add('text-gray-600', 'self-end', 'flex-end', 'justify-end');
-            message.classList.add('big-white', 'text-gray-600', 'shadow-md');
+            message.classList.add('bg-white', 'text-gray-600', 'shadow-md');
             circle.remove();
             // outerDiv.prepend(circle);
         } else if (item.type() == 'recieved') {

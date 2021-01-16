@@ -16,7 +16,7 @@ mins < 10 ? newMin = `0${mins}` : newMin = `${mins}`;
 
 const formattedDate = `${hour}:${newMin}`;
 
-const div = document.querySelector('#screen');
+const div = document.querySelector('#child');
 const messageTemplate = new MessageTemplate(div)
 
 let doc: HasFormatter;
