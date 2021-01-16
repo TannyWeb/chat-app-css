@@ -1,5 +1,5 @@
 import { HasFormatter } from '../interfaces/hasFormatter';
-import { colors, shades } from '../functions/randomPickGenerator'
+import { colors, shades } from '../functions/randomPickGenerator';
 
 export class MessageTemplate {
     constructor(private container: Element) { }
@@ -7,7 +7,7 @@ export class MessageTemplate {
 
         //Create outer div
         const outerDiv = document.createElement('div');
-        const circle = document.createElement('div');
+        const circle = document.createElement('img');
         const infoWrapper = document.createElement('div');
         const infoWrapperBottom = document.createElement('div');
         const name = document.createElement('h4');
@@ -17,7 +17,7 @@ export class MessageTemplate {
         outerDiv.classList.add('flex', 'w-5/6', 'mb-4', 'rounded-t-xl', 'rounded-br-xl', 'rounded-bl-md', 'text-xs', 'p-2');
 
         //Create cirl div holding image
-        circle.classList.add('circle', 'outline-black', 'rounded-full', 'w-1/6', 'h-8', 'self-center', 'mr-3', 'mb-4');
+        circle.classList.add('circle', 'border-solid', 'border-2', 'rounded-full', 'w-8', 'h-8', 'self-center', 'mr-3', 'mb-4');
 
         //Create infoWrapper to hold all the information in
         infoWrapper.classList.add('w-5/6', 'flex', 'flex-col');
@@ -63,7 +63,9 @@ export class MessageTemplate {
 
             console.log(`bg-${randomColor}-${randomShade}`)
 
-            message.classList.add(`bg-${randomColor}-${randomShade}`, 'text-white')
+            message.classList.add(`bg-${randomColor}-${randomShade}`, 'text-white');
+
+            circle.classList.add(`border-${randomColor}-${randomShade}`)
             // outerDiv.append(circle);
         }
 
