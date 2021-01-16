@@ -24,7 +24,6 @@ let doc: HasFormatter;
 btn.addEventListener('click', (e: Event) => {
     e.preventDefault();
 
-
     if (input.value !== "") {
         console.log('show something')
         doc = new Message('Tanny', input.value, formattedDate, 'sent')
@@ -39,11 +38,16 @@ recieveBtn.addEventListener('click', (e: Event) => {
     e.preventDefault();
     console.log('get ready to recieve a message');
     const url = 'https://type.fit/api/quotes';
-    const getQuote = async () => {
+
+    interface E {
+        author: string,
+        text: string
+    }
+    const getQuote = async (): Promise<Array<E> | string> => {
 
         try {
             const data = await (await fetch(url)).json();
-            const randomNum = Math.floor(Math.random() * data.length);
+            const randomNum: number = Math.floor(Math.random() * data.length);
             const randomQuote = data[randomNum];
 
             let { text, author } = randomQuote;
