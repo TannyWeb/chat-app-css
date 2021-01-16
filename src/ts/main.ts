@@ -8,7 +8,8 @@ import { MessageTemplate } from './classes/messageTemplate';
 
 const input = document.querySelector('input');
 const btn = document.querySelector('#send');
-const recieveBtn = document.querySelector('#recieve');
+const recieveBtn = document.querySelector('#recieve') as HTMLElement;
+const dateBtn = document.querySelector('#screenDate') as HTMLElement;
 const hour = new Date().getHours();
 let mins = new Date().getMinutes();
 let newMin = '';
@@ -17,7 +18,12 @@ mins < 10 ? newMin = `0${mins}` : newMin = `${mins}`;
 const formattedDate = `${hour}:${newMin}`;
 
 const div = document.querySelector('#child');
-const messageTemplate = new MessageTemplate(div)
+const messageTemplate = new MessageTemplate(div);
+const fomattedDate = new Date().toDateString();
+
+dateBtn.innerText = fomattedDate;
+
+
 
 let doc: HasFormatter;
 
